@@ -1,0 +1,80 @@
+# ============ Miscellaneous ============
+*.class
+*.log
+*.pyc
+*.swp
+.DS_Store
+.atom/
+.build/
+.buildlog/
+.history
+.svn/
+.swiftpm/
+migrate_working_dir/
+
+# ============ IDE / Editor ============
+# IntelliJ / Android Studio
+*.iml
+*.ipr
+*.iws
+.idea/
+# VS Code (uncomment if you don't want to commit launch config)
+#.vscode/
+
+# ============ Flutter / Dart / Pub ============
+**/doc/api/
+**/ios/Flutter/.last_build_id
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.pub-cache/
+.pub/
+/build/
+/coverage/
+
+# ============ Symbolication & Obfuscation ============
+app.*.symbols
+app.*.map.json
+
+# ============ Android ============
+# Build artifacts
+/android/app/debug
+/android/app/profile
+/android/app/release
+# Local configuration (contains SDK paths, should not be committed)
+/android/local.properties
+# Keystore files (signing credentials, never commit)
+*.keystore
+*.jks
+key.properties
+
+# ============ iOS ============
+**/ios/Pods/
+**/ios/.symlinks/
+**/ios/Flutter/App.framework
+**/ios/Flutter/Flutter.framework
+**/ios/Flutter/Flutter.podspec
+**/ios/Flutter/Generated.xcconfig
+**/ios/Flutter/app.flx
+**/ios/Flutter/app.zip
+**/ios/Flutter/flutter_assets/
+**/ios/Flutter/flutter_export_environment.sh
+**/ios/ServiceDefinitions.json
+**/ios/Runner/GeneratedPluginRegistrant.*
+
+# ============ Environment & Secrets ============
+.env
+.env.local
+.env.*.local
+*.env
+
+# ============ Generated files ============
+*.g.dart
+*.freezed.dart
+*.mocks.dart
+
+# ============ Agent / AI config ============
+.qoder/
+
+# ============ OS files ============
+Thumbs.db
