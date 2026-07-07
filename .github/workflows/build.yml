@@ -50,3 +50,34 @@ jobs:
         with:
           name: duoduo-macos
           path: build/macos/Build/Products/Release/
+
+  release:
+    needs: [build-windows, build-macos]
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: duoduo-windows
+          path: _release/windows/
+      - uses: actions/download-artifact@v4
+        with:
+          name: duoduo-macos
+          path: _release/macos/
+      - run: |
+          cd _release
+          zip -r ../duoduo-learn-windows.zip windows/
+          cd ../..
+          cd _release
+          zip -r ../duoduo-learn-macos.zip macos/
+          cd ..
+      - uses: softprops/action-gh-release@v2
+        with:
+          tag_name: v1.0.${{ github.run_number }}
+          name: v1.0.${{ github.run_number }}
+          files: |
+            duoduo-learn-windows.zip
+            duoduo-learn-macos.zip
+          generate_release_notes: true
