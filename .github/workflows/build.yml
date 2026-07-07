@@ -69,10 +69,7 @@ jobs:
       - run: |
           cd _release
           zip -r ../duoduo-learn-windows.zip windows/
-          cd ../..
-          cd _release
           zip -r ../duoduo-learn-macos.zip macos/
-          cd ..
       - uses: softprops/action-gh-release@v2
         with:
           tag_name: v1.0.${{ github.run_number }}
