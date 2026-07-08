@@ -28,7 +28,7 @@
 ## Gotchas
 - No `.g.dart` / `.freezed.dart` codegen — models are hand-written with `toMap()`/`fromMap()` (gitignored anyway)
 - No `.env` file for AI config — AI API endpoint/key/model are configured in-app (settings screen), not in env vars
-- No CI pipeline configured — no `.github/` workflows
-- No `openforge.json` or `CLAUDE.md` — only `AGENTS.md` and `README.md`
+- CI pipeline in `.github/workflows/build.yml` — 3 jobs: check → build (matrix: windows/macos) → release
+- Desktop builds require `sqflite_common_ffi` init in `main.dart` — see `DEVELOPMENT.md` for details
 - `receive_sharing_intent` init errors are silently caught (release-mode safe)
 - Java 17+ JDK required for Android builds (`JAVA_HOME` must point to JDK 17)
